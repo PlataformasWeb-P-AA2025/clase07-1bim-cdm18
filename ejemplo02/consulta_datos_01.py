@@ -21,8 +21,11 @@ session = Session()
 # Obtener todos los registros de
 # la entidad estudiante (clase Estudiante)
 
-# estudiantes = session.query(Estudiante).all()
-# print(estudiantes)
+estudiantes = session.query(Estudiante).all()
+# print(estudiantes[0].id, estudiantes[0].nombre )
+
+# for estudiante in estudiantes:
+#    print(f"{estudiante.id} - {estudiante.nombre}")
 
 # print("--------------------------------------")
 # Obtener todos los registros de la clase Modulo
@@ -31,8 +34,11 @@ session = Session()
 
 # print("--------------------------------------")
 # Obtener todos los registros de la clase Matricula
-# matriculas = session.query(Matricula).all()
+matriculas = session.query(Matricula).all()
 
+for m in matriculas:
+    print(f"{m.estudiante.nombre} - {m.estudiante.apellido}")
 # nombre y apellido del estudiante de cada matrícula
+# para consultar usé el foreach y accedi a los estudiantes a traves de la relacion propuesta en la clase matriculas
 
 # print(matriculas)
